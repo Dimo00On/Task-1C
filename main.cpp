@@ -3,8 +3,10 @@
 
 
 int main() {
-    auto solution_finder = SolutionFinder(SolutionFinder::read_input(std::cin));
-    solution_finder.find_exact_solution_small_graph();
+    auto graph = SolutionFinder::read_input(std::cin);
+    auto solution_finder = SolutionFinder(graph);
+    solution_finder.find_solution();
+    auto solution = solution_finder.get_solution();
     solution_finder.print_answer(std::cout);
     return 0;
 }
